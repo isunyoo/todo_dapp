@@ -1,18 +1,17 @@
+import 'TodoListModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'TodoListModel.dart';
 
 showTodoBottomSheet(BuildContext context, {required Task task}) {
-  TextEditingController _titleController =
-  TextEditingController(text: task?.taskName ?? "");
+  TextEditingController titleController =  TextEditingController(text: task.taskName);
   var listModel = Provider.of<TodoListModel>(context, listen: false);
   return showModalBottomSheet<void>(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     context: context,
     builder: (BuildContext context) {
       return Container(
-        padding: EdgeInsets.only(top: 10),
-        margin: EdgeInsets.all(10),
+        padding: const EdgeInsets.only(top: 10),
+        margin: const EdgeInsets.all(10),
         height: 300,
         child: SingleChildScrollView(
           child: Column(
@@ -25,14 +24,14 @@ showTodoBottomSheet(BuildContext context, {required Task task}) {
                   borderRadius: BorderRadius.circular(20),
                 ),
               ),
-              SizedBox(height: 18),
+              const SizedBox(height: 18),
               TextField(
-                controller: _titleController,
+                controller: titleController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(20)),
                   ),
-                  contentPadding: const EdgeInsets.only(
+                  contentPadding: EdgeInsets.only(
                     left: 14.0,
                     bottom: 20.0,
                     top: 20.0,
@@ -42,19 +41,19 @@ showTodoBottomSheet(BuildContext context, {required Task task}) {
                     fontSize: 20,
                   ),
                 ),
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 20,
                 ),
               ),
-              SizedBox(height: 12),
+              const SizedBox(height: 12),
               if (task == null)
                 buildButton("Created", () {
-                  listModel.addTask(_titleController.text);
+                  listModel.addTask(titleController.text);
                   Navigator.pop(context);
                 }),
               if (task != null)
                 buildButton("Updated", () {
-                  listModel.updateTask(task.id, _titleController.text);
+                  listModel.updateTask(task.id, titleController.text);
                   Navigator.pop(context);
                 }),
               if (task != null)
@@ -74,21 +73,21 @@ TextButton buildButton(String text, Function onPressed) {
   return TextButton(
     onPressed: onPressed,
     child: Container(
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-          ),
-        ),
-      ),
       height: 50,
-      padding: EdgeInsets.symmetric(vertical: 10),
+      padding: const EdgeInsets.symmetric(vertical: 10),
       width: double.infinity,
       decoration: BoxDecoration(
         color: text == "Delete" ? Colors.red : Colors.blue,
         borderRadius: BorderRadius.circular(15),
+      ),
+      child: Center(
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
+        ),
       ),
     ),
   );

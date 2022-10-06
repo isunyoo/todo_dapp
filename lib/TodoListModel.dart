@@ -1,5 +1,5 @@
-import 'dart:convert';
 import 'dart:core';
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:http/http.dart';
@@ -12,7 +12,7 @@ class TodoListModel extends ChangeNotifier {
   late int taskCount;
   final String _rpcUrl = "http://127.0.0.1:8545";
   final String _wsUrl = "ws://127.0.0.1:8545/";
-  final String _privateKey = "d68da8eceedf34a9636d61945e6cec240ea61a620254e833db1f5c98ed615413";
+  final String _privateKey = "-";
 
   late Web3Client _client;
   late String _abiCode;

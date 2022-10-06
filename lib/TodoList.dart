@@ -11,19 +11,19 @@ class TodoList extends StatelessWidget {
     var listModel = Provider.of<TodoListModel>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dapp Todo"),
+        title: const Text("Dapp Todo"),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showTodoBottomSheet(context, task: null);
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       body: listModel.isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? const Center(child: CircularProgressIndicator())
           : Column(
         children: [
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           Expanded(
             child: ListView.builder(
               itemCount: listModel.todos.length,
@@ -36,11 +36,11 @@ class TodoList extends StatelessWidget {
                     );
                   },
                   child: Container(
-                    margin: EdgeInsets.symmetric(
+                    margin: const EdgeInsets.symmetric(
                       vertical: 2,
                       horizontal: 12,
                     ),
-                    padding: EdgeInsets.all(4),
+                    padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
                       color: Colors.grey[300],
                       borderRadius: BorderRadius.circular(20),
