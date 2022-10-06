@@ -19,16 +19,23 @@ samples, guidance on mobile development, and a full API reference.
 - [DOC] https://learn.figment.io/tutorials/create-a-todo-dapp-with-flutter
 
 - Project Setup
+
 flutter create todo_dapp
+
 cd todo_dapp
 
 mkdir smartcontract
+
 cd smartcontract
 
 npm install -g truffle
+
 npm install @truffle/hdwallet-provider
 
 truffle init
+
 truffle compile
+
 truffle migrate
+
 truffle migrate --network matic
