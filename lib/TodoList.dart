@@ -4,7 +4,7 @@ import 'TodoBottomSheet.dart';
 import 'TodoListModel.dart';
 
 class TodoList extends StatelessWidget {
-  const TodoList({required Key key}) : super(key: key);
+  const TodoList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class TodoList extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          showTodoBottomSheet(context, task: null);
+          showTodoBottomSheet(context);
         },
         child: const Icon(Icons.add),
       ),

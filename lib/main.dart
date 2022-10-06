@@ -8,7 +8,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       create: (context) => TodoListModel(),
       child: const MaterialApp(
         title: 'Flutter TODO',
-        home: TodoList(key: null,),
+        home: TodoList(),
       ),
     );
   }

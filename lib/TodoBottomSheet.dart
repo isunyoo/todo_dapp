@@ -2,8 +2,8 @@ import 'TodoListModel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-showTodoBottomSheet(BuildContext context, {required Task task}) {
-  TextEditingController titleController =  TextEditingController(text: task.taskName);
+showTodoBottomSheet(BuildContext context, {Task? task}) {
+  TextEditingController titleController =  TextEditingController(text: task?.taskName);
   var listModel = Provider.of<TodoListModel>(context, listen: false);
   return showModalBottomSheet<void>(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -69,7 +69,7 @@ showTodoBottomSheet(BuildContext context, {required Task task}) {
   );
 }
 
-TextButton buildButton(String text, Function onPressed) {
+TextButton buildButton(String text, Function()? onPressed) {
   return TextButton(
     onPressed: onPressed,
     child: Container(
