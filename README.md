@@ -15,27 +15,25 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
-
+- Project Setup
 - [DOC] https://learn.figment.io/tutorials/create-a-todo-dapp-with-flutter
 
-- Project Setup
+% flutter create todo_dapp
 
-flutter create todo_dapp
+% cd todo_dapp
 
-cd todo_dapp
+% mkdir smartcontract
 
-mkdir smartcontract
+% cd smartcontract
 
-cd smartcontract
+% npm install -g truffle
 
-npm install -g truffle
+% npm install @truffle/hdwallet-provider
 
-npm install @truffle/hdwallet-provider
+% truffle init
 
-truffle init
+% truffle compile
 
-truffle compile
+% truffle migrate
 
-truffle migrate
-
-truffle migrate --network matic
+% truffle migrate --network matic
