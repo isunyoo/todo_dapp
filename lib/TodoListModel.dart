@@ -12,7 +12,7 @@ class TodoListModel extends ChangeNotifier {
   late int taskCount;
   final String _rpcUrl = "http://127.0.0.1:8545";
   final String _wsUrl = "ws://127.0.0.1:8545/";
-  final String _privateKey = "d68da8eceedf34a9636d61945e6cec240ea61a620254e833db1f5c98ed615413";
+  final String _privateKey = "-";
 
   late Web3Client _client;
   late String _abiCode;
@@ -44,17 +44,18 @@ class TodoListModel extends ChangeNotifier {
   }
 
   Future<void> getAbi() async {
-    String abiStringFile = await rootBundle
-        .loadString("smartcontract/build/contracts/TodoContract.json");
+    String abiStringFile = await rootBundle.loadString("smartcontract/build/contracts/TodoContract.json");
     var jsonAbi = jsonDecode(abiStringFile);
     _abiCode = jsonEncode(jsonAbi["abi"]);
-    _contractAddress =
-        EthereumAddress.fromHex(jsonAbi["networks"]["5777"]["address"]);
+    _contractAddress = EthereumAddress.fromHex(jsonAbi["networks"]["4447"]["address"]);
+    //debugPrint(_contractAddress.toString());
   }
 
   Future<void> getCredentials() async {
-    _credentials = await _client.credentialsFromPrivateKey(_privateKey);
+    _credentials = EthPrivateKey.fromHex(_privateKey);
     _ownAddress = await _credentials.extractAddress();
+    //debugPrint(_credentials.toString());
+    //debugPrint(_ownAddress.toString());
   }
 
   Future<void> getDeployedContract() async {
