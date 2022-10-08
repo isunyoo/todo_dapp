@@ -1,8 +1,8 @@
-const HDWalletProvider = require("@truffle/hdwallet-provider");
-const fs = require("fs");
-const mnemonic = fs.readFileSync(".secret").toString().trim();
-
-var DATAHUB_API_KEY = "YOU-DATAHUB-API-KEY-FOR-POLYGON";
+//const HDWalletProvider = require("@truffle/hdwallet-provider");
+//const fs = require("fs");
+//const mnemonic = fs.readFileSync(".secret").toString().trim();
+//
+//var DATAHUB_API_KEY = "YOU-DATAHUB-API-KEY-FOR-POLYGON";
 
 module.exports = {
   networks: {
