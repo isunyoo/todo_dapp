@@ -36,4 +36,8 @@ samples, guidance on mobile development, and a full API reference.
 
 % truffle migrate
 
+% truffle migrate --reset --compile-all --network development
+
 % truffle migrate --network matic
+
+% adb -s emulator-5554 reverse tcp:8545 tcp:8545
