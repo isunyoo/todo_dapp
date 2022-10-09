@@ -12,7 +12,7 @@ class TodoListModel extends ChangeNotifier {
   late int taskCount;
   final String _rpcUrl = "http://127.0.0.1:8545";
   final String _wsUrl = "ws://127.0.0.1:8545/";
-  final String _privateKey = "0xc34aff58105ad242b8e6c0e09590b202e0186763959301a2727f38f9146ff523";
+  final String _privateKey = "-";
 
   late Web3Client _client;
   late String _abiCode;
